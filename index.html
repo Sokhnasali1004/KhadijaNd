@@ -3,17 +3,33 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Khadija_Nd </title>
-<meta name="description" content="Khadija_Nd — Créatrice de contenu et influenceuse. Storytelling, collaborations de marque et communauté.">
+<title>Khadija_Nd — Créatrice de Contenu & Influenceuse</title>
+<meta name="description" content="Khadija_Nd — Créatrice de contenu, influenceuse et model photo. Storytelling captivant, partenariats de marque et communauté engagée.">
+<meta name="theme-color" content="#FAF4F0">
+
+<!-- Open Graph / Facebook / WhatsApp / Instagram -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://khadija-nd-24a5.vercel.app/">
+<meta property="og:title" content="Khadija_Nd — Créatrice de Contenu & Influenceuse">
+<meta property="og:description" content="Storytelling captivant, collaborations de marque et direction créative. Découvrez mon univers et mes projets.">
+<meta property="og:image" content="https://khadija-nd-24a5.vercel.app/Images/Photo2.jpeg">
+<meta property="og:locale" content="fr_FR">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Khadija_Nd — Créatrice de Contenu & Influenceuse">
+<meta name="twitter:description" content="Storytelling captivant, collaborations de marque et direction créative.">
+<meta name="twitter:image" content="https://khadija-nd-24a5.vercel.app/Images/Photo2.jpeg">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=Jost:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="shortcut icon" href="Images/k.png" type="image/x-icon" />
-  <!-- Bootstrap CSS -->
+<!-- Bootstrap CSS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Font Awesome -->
+<!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- Supabase JS Client v2 -->
+<!-- Supabase JS Client v2 -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="supabase-client.js"></script>
    
@@ -963,10 +979,125 @@ body{ padding-top: 78px; }
   @keyframes spinnerAnim{
     to{transform:rotate(360deg);}
   }
+
+  /* ---------- CURSOR GLOW INTERACTIF ---------- */
+  .cursor-glow{
+    position:fixed;
+    width:360px;
+    height:360px;
+    border-radius:50%;
+    background:radial-gradient(circle, rgba(216,83,106,0.12) 0%, rgba(201,162,39,0.06) 45%, transparent 70%);
+    pointer-events:none;
+    z-index:1;
+    transform:translate(-50%, -50%);
+    transition:opacity 0.3s ease;
+    opacity:0;
+  }
+  body:hover .cursor-glow{ opacity:1; }
+  @media (max-width:840px){ .cursor-glow{ display:none; } }
+
+  /* ---------- BOUTON RETOUR EN HAUT (BACK TO TOP) ---------- */
+  .back-to-top{
+    position:fixed;
+    bottom:26px;
+    right:26px;
+    z-index:99;
+    width:44px;
+    height:44px;
+    border-radius:50%;
+    background:var(--plum);
+    border:1px solid var(--gold);
+    color:var(--gold-light);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    box-shadow:0 10px 25px -5px rgba(43,22,32,0.4);
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(16px);
+    transition:all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .back-to-top.show{
+    opacity:0.9;
+    visibility:visible;
+    transform:translateY(0);
+  }
+  .back-to-top:hover{
+    opacity:1;
+    background:var(--rose-deep);
+    color:#fff;
+    transform:translateY(-3px);
+    box-shadow:0 14px 28px -5px rgba(168,51,80,0.5);
+  }
+
+  /* ---------- CONTACT EMAIL & COPIE EN 1 CLIC ---------- */
+  .contact-email-wrapper{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    margin:12px auto 0;
+    flex-wrap:wrap;
+  }
+  .btn-copy-email{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    padding:6px 14px;
+    border-radius:100px;
+    border:1px solid rgba(201,162,39,0.45);
+    background:rgba(255,255,255,0.75);
+    color:var(--rose-deep);
+    font-family:'Space Mono', monospace;
+    font-size:0.75rem;
+    font-weight:700;
+    cursor:pointer;
+    transition:all 0.25s ease;
+    backdrop-filter:blur(6px);
+  }
+  .btn-copy-email:hover{
+    background:var(--rose-deep);
+    color:#fff;
+    border-color:var(--rose-deep);
+    transform:translateY(-2px);
+    box-shadow:0 6px 16px rgba(168,51,80,0.25);
+  }
+
+  /* ---------- SITE TOAST NOTIFICATION ---------- */
+  .site-toast{
+    position:fixed;
+    bottom:30px;
+    left:50%;
+    transform:translateX(-50%) translateY(20px);
+    z-index:999;
+    background:var(--plum);
+    color:var(--gold-light);
+    border:1px solid var(--gold);
+    padding:12px 24px;
+    border-radius:100px;
+    font-family:'Space Mono', monospace;
+    font-size:0.82rem;
+    box-shadow:0 16px 36px -10px rgba(0,0,0,0.5);
+    display:flex;
+    align-items:center;
+    gap:8px;
+    opacity:0;
+    visibility:hidden;
+    transition:all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events:none;
+  }
+  .site-toast.active{
+    opacity:1;
+    visibility:visible;
+    transform:translateX(-50%) translateY(0);
+  }
+  .toast-sparkle{ color:var(--gold); }
 </style>
 </head>
 
 <body>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
 
   <header id="Bonjour">
   <div class="navbar">
@@ -1024,20 +1155,20 @@ body{ padding-top: 78px; }
         <span>Model photo</span>
       </div>
       <div class="hero-stats">
-        <a href="#" aria-label="Instagram"><strong>68K+</strong><small>sur Instagram</small></a>
-        <a href="#" aria-label="TikTok"><strong>105K+</strong><small>sur TikTok</small></a>
+        <a href="#" aria-label="Instagram"><strong class="counter" data-target="68" data-suffix="K+">68K+</strong><small>sur Instagram</small></a>
+        <a href="#" aria-label="TikTok"><strong class="counter" data-target="105" data-suffix="K+">105K+</strong><small>sur TikTok</small></a>
       </div>
     </div>
     <div class="hero-portrait">
-      <img style="border-radius: 25px;" src="Images/photo1.jpeg" alt="">
+      <img style="border-radius: 25px;" src="Images/photo1.jpeg" alt="Khadija_Nd">
     </div>
   </section>
 
   <div class="stats-bar reveal">
-    <div class="stat"><strong> 68K+</strong><small>Instagram</small></div>
-    <div class="stat"><strong>105K+</strong><small>TikTok</small></div>
-    <div class="stat"><strong>100%</strong><small>Taux d'engagement</small></div>
-    <div class="stat"><strong>12+</strong><small>Campagnes réalisées</small></div>
+    <div class="stat"><strong class="counter" data-target="68" data-suffix="K+">68K+</strong><small>Instagram</small></div>
+    <div class="stat"><strong class="counter" data-target="105" data-suffix="K+">105K+</strong><small>TikTok</small></div>
+    <div class="stat"><strong class="counter" data-target="100" data-suffix="%">100%</strong><small>Taux d'engagement</small></div>
+    <div class="stat"><strong class="counter" data-target="12" data-suffix="+">12+</strong><small>Campagnes réalisées</small></div>
   </div>
 
   <!-- FEATURED CONTENT (dynamique) -->
@@ -1223,7 +1354,13 @@ body{ padding-top: 78px; }
       <a href="#">TikTok — @Khadijaah9</a>
       <a href="#">Snapchat — @khadija_N</a>
     </div>
-    <a class="contact-email" href="mailto:contact@khadija-nd.com">contact@khadija-nd.com</a>
+    <div class="contact-email-wrapper">
+      <a class="contact-email" id="contactEmailLink" href="mailto:contact@khadija-nd.com">contact@khadija-nd.com</a>
+      <button type="button" class="btn-copy-email" id="btnCopyEmail" title="Copier l'adresse email" aria-label="Copier l'adresse email">
+        <i class="fa-regular fa-copy"></i>
+        <span>Copier</span>
+      </button>
+    </div>
 
     <div class="contact-box reveal">
       <h3>Proposer un projet ou un partenariat ✦</h3>
@@ -1264,6 +1401,17 @@ body{ padding-top: 78px; }
   <span>© 2026 Khadija_Nd</span>
   <a href="admin.html" style="opacity:0.35; font-size:0.75rem; text-decoration:none; transition:opacity 0.2s;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='0.35'" title="Espace d'administration">Administration ↗</a>
 </footer>
+
+<!-- Bouton Retour en haut -->
+<button id="backToTop" class="back-to-top" title="Retour en haut" aria-label="Retour en haut">
+  <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<!-- Toast de notification du site -->
+<div id="siteToast" class="site-toast">
+  <span class="toast-sparkle">✦</span>
+  <span id="siteToastMsg">Adresse email copiée !</span>
+</div>
 
 <!-- Lightbox de lecture vidéo pour "Mes contenus qui ont marqué l'année" -->
 <div id="videoLightbox" class="video-lightbox">
@@ -1509,8 +1657,104 @@ body{ padding-top: 78px; }
     });
   }
 
+  /* ---------- ANIMATION DES COMPTEURS (STATS) ---------- */
+  function animateCounters(){
+    const counters = document.querySelectorAll('.counter[data-target]');
+    if(!counters.length) return;
+
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          const counter = entry.target;
+          const target = parseInt(counter.dataset.target, 10);
+          const suffix = counter.dataset.suffix || "";
+          const duration = 1800; // ms
+          const startTime = performance.now();
+
+          function updateCount(currentTime){
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            // Easing out cubic
+            const easeOutProgress = 1 - Math.pow(1 - progress, 3);
+            const currentVal = Math.floor(easeOutProgress * target);
+            counter.textContent = currentVal + suffix;
+
+            if(progress < 1){
+              requestAnimationFrame(updateCount);
+            }else{
+              counter.textContent = target + suffix;
+            }
+          }
+
+          requestAnimationFrame(updateCount);
+          obs.unobserve(counter);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    counters.forEach(c => observer.observe(c));
+  }
+
+  /* ---------- TOAST DU SITE & COPIE EMAIL ---------- */
+  let siteToastTimer = null;
+  function showSiteToast(msg){
+    const toast = document.getElementById('siteToast');
+    const toastMsg = document.getElementById('siteToastMsg');
+    if(!toast || !toastMsg) return;
+    toastMsg.textContent = msg;
+    toast.classList.add('active');
+    clearTimeout(siteToastTimer);
+    siteToastTimer = setTimeout(() => toast.classList.remove('active'), 2800);
+  }
+
+  const btnCopyEmail = document.getElementById('btnCopyEmail');
+  if(btnCopyEmail){
+    btnCopyEmail.addEventListener('click', () => {
+      const email = 'contact@khadija-nd.com';
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(email).then(() => {
+          showSiteToast("Adresse email copiée dans le presse-papier ! ✨");
+        }).catch(() => {
+          showSiteToast("contact@khadija-nd.com");
+        });
+      }else{
+        showSiteToast("contact@khadija-nd.com");
+      }
+    });
+  }
+
+  /* ---------- BOUTON RETOUR EN HAUT (BACK TO TOP) ---------- */
+  const backToTopBtn = document.getElementById('backToTop');
+  if(backToTopBtn){
+    window.addEventListener('scroll', () => {
+      if(window.scrollY > 400){
+        backToTopBtn.classList.add('show');
+      }else{
+        backToTopBtn.classList.remove('show');
+      }
+    }, { passive: true });
+
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  /* ---------- CURSOR GLOW (DESKTOP) ---------- */
+  const cursorGlow = document.getElementById('cursorGlow');
+  if(cursorGlow && window.matchMedia('(pointer: fine)').matches){
+    window.addEventListener('mousemove', (e) => {
+      cursorGlow.style.left = e.clientX + 'px';
+      cursorGlow.style.top = e.clientY + 'px';
+      cursorGlow.style.opacity = '1';
+    }, { passive: true });
+    document.addEventListener('mouseleave', () => {
+      cursorGlow.style.opacity = '0';
+    });
+  }
+
   /* ---------- INITIALISATION DU SITE ---------- */
   (async function initApp(){
+    animateCounters();
     await Promise.all([
       renderContentGrid(),
       renderGalleryGrid(),
