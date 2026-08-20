@@ -1093,6 +1093,162 @@ body{ padding-top: 78px; }
     transform:translateX(-50%) translateY(0);
   }
   .toast-sparkle{ color:var(--gold); }
+
+  /* =========================================================
+     FOOTER HAUTE COUTURE
+     ========================================================= */
+  .site-footer{
+    background:var(--plum);
+    color:var(--cream);
+    border-top:1px solid var(--gold);
+    padding:80px 0 36px;
+    margin-top:90px;
+    position:relative;
+    overflow:hidden;
+  }
+  .site-footer::before{
+    content:'';
+    position:absolute;
+    top:0; left:10%; right:10%;
+    height:1px;
+    background:var(--gold-shine);
+  }
+  .footer-grid{
+    display:grid;
+    grid-template-columns:1.5fr 1fr 1.3fr;
+    gap:48px;
+    margin-bottom:60px;
+  }
+  @media (max-width:860px){
+    .footer-grid{
+      grid-template-columns:1fr;
+      gap:36px;
+    }
+  }
+  .footer-brand .footer-logo{
+    font-family:'Fraunces', serif;
+    font-size:1.65rem;
+    font-weight:600;
+    color:var(--gold-light);
+    margin-bottom:14px;
+    display:inline-block;
+  }
+  .footer-brand .footer-logo .dot{ color:var(--rose); }
+  .footer-tagline{
+    font-size:0.92rem;
+    color:rgba(251,241,236,0.72);
+    line-height:1.6;
+    max-width:350px;
+    margin-bottom:20px;
+  }
+  .footer-status-pill{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:6px 14px;
+    border-radius:100px;
+    background:rgba(216,83,106,0.18);
+    border:1px solid rgba(216,83,106,0.35);
+    color:var(--gold-light);
+    font-family:'Space Mono', monospace;
+    font-size:0.72rem;
+  }
+  .footer-title{
+    font-family:'Fraunces', serif;
+    font-size:1.15rem;
+    color:var(--gold-light);
+    margin-bottom:18px;
+    position:relative;
+    display:inline-block;
+  }
+  .footer-title::after{
+    content:'✦';
+    font-size:0.7rem;
+    color:var(--rose);
+    margin-left:6px;
+  }
+  .footer-links{
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    margin:0; padding:0;
+  }
+  .footer-links a{
+    color:rgba(251,241,236,0.75);
+    font-size:0.9rem;
+    transition:all 0.25s ease;
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+  }
+  .footer-links a:hover{
+    color:var(--gold-light);
+    transform:translateX(5px);
+  }
+  .footer-social-list{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+  .footer-social-item{
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+    padding:10px 16px;
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(201,162,39,0.25);
+    border-radius:14px;
+    color:var(--cream);
+    font-size:0.88rem;
+    transition:all 0.25s ease;
+    backdrop-filter:blur(6px);
+  }
+  .footer-social-item i{
+    font-size:1.1rem;
+    color:var(--gold-light);
+    transition:transform 0.25s ease;
+  }
+  .footer-social-item:hover{
+    background:rgba(216,83,106,0.25);
+    border-color:var(--rose);
+    color:var(--gold-light);
+    transform:translateY(-2px);
+    box-shadow:0 8px 20px rgba(0,0,0,0.3);
+  }
+  .footer-social-item:hover i{
+    transform:scale(1.18);
+  }
+  .footer-bottom{
+    padding-top:28px;
+    border-top:1px solid rgba(251,241,236,0.12);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:16px;
+    font-size:0.82rem;
+    color:rgba(251,241,236,0.55);
+  }
+  .footer-admin-link{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    padding:6px 14px;
+    border-radius:100px;
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(251,241,236,0.2);
+    color:rgba(251,241,236,0.7);
+    font-size:0.75rem;
+    font-family:'Space Mono', monospace;
+    transition:all 0.2s ease;
+  }
+  .footer-admin-link:hover{
+    background:var(--rose-deep);
+    color:#fff;
+    border-color:var(--rose-deep);
+    transform:translateY(-1px);
+  }
 </style>
 </head>
 
@@ -1397,9 +1553,63 @@ body{ padding-top: 78px; }
   </section>
 </main>
 
-<footer class="wrap" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
-  <span>© 2026 Khadija_Nd</span>
-  <a href="admin.html" style="opacity:0.35; font-size:0.75rem; text-decoration:none; transition:opacity 0.2s;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='0.35'" title="Espace d'administration">Administration ↗</a>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      
+      <!-- Brand column -->
+      <div class="footer-brand">
+        <a href="#Bonjour" class="footer-logo">Khadija<span class="dot">_</span>Nd</a>
+        <p class="footer-tagline">
+          Créatrice de contenu, influenceuse et model photo. Donner vie à des formats authentiques et raconter des histoires vraies qui captent l'attention.
+        </p>
+        <div class="footer-status-pill">
+          <span style="color:#2E7D32;">●</span> Ouverte aux collaborations 2026
+        </div>
+      </div>
+
+      <!-- Quick links column -->
+      <div class="footer-nav">
+        <h4 class="footer-title">Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="#content">✦ Contenus en vedette</a></li>
+          <li><a href="#about">✦ À propos</a></li>
+          <li><a href="#services">✦ Mes prestations & formats</a></li>
+          <li><a href="#process">✦ Ma méthode</a></li>
+          <li><a href="#gallery">✦ Univers (Galerie)</a></li>
+          <li><a href="#contact">✦ Travaillons ensemble</a></li>
+        </ul>
+      </div>
+
+      <!-- Social & Connect column -->
+      <div class="footer-connect">
+        <h4 class="footer-title">Rejoindre la communauté</h4>
+        <div class="footer-social-list">
+          <a href="#" class="footer-social-item" target="_blank" rel="noopener">
+            <i class="fa-brands fa-instagram"></i>
+            <span>Instagram — @Khadiha_n <strong>(68K+)</strong></span>
+          </a>
+          <a href="#" class="footer-social-item" target="_blank" rel="noopener">
+            <i class="fa-brands fa-tiktok"></i>
+            <span>TikTok — @Khadijaah9 <strong>(105K+)</strong></span>
+          </a>
+          <a href="#" class="footer-social-item" target="_blank" rel="noopener">
+            <i class="fa-brands fa-snapchat"></i>
+            <span>Snapchat — @khadija_N</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 Khadija_Nd. Tous droits réservés.</span>
+      <span>Conçu avec passion & élégance ✦</span>
+      <a href="admin.html" class="footer-admin-link" title="Espace d'administration">
+        <i class="fa-solid fa-lock" style="font-size:0.65rem;"></i> Espace Studio ↗
+      </a>
+    </div>
+  </div>
 </footer>
 
 <!-- Bouton Retour en haut -->
